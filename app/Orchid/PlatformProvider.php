@@ -39,17 +39,23 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title(__('Access rights')),
+                ->title('Access rights'),
 
-            Menu::make('Roles')
-                ->icon('lock')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles'),
+            Menu::make('Authorization')
+                ->icon('code')
+                ->list([
+                    Menu::make('Roles')->icon('lock')->route('platform.systems.roles')->permission('platform.systems.roles'),
+                    Menu::make('Permissions')->icon('options'),
+                ]),
+            // Menu::make('Roles')
+            //     ->icon('lock')
+            //     ->route('platform.systems.roles')
+            //     ->permission('platform.systems.roles'),
 
-            Menu::make('Permissions')
-                ->icon('options')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles'),
+            // Menu::make('Permissions')
+            //     ->icon('options')
+            //     ->route('platform.systems.roles')
+            //     ->permission('platform.systems.roles'),
              //Access rights
 
             //Content Creation
@@ -65,13 +71,6 @@ class PlatformProvider extends OrchidServiceProvider
             //     ->title('Manage Blogs')
             //     ->icon('book-open')
             //     ->route('platform.example.layouts'),
-
-            Menu::make('Dropdown menu')
-                ->icon('code')
-                ->list([
-                    Menu::make('Sub element item 1')->icon('bag'),
-                    Menu::make('Sub element item 2')->icon('heart'),
-                ]),
 
             Menu::make('Basic Elements')
                 ->title('Form controls')

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Blog\BlogEditScreen;
+use App\Orchid\Screens\Blog\BlogListScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -97,3 +99,8 @@ Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.exampl
 Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
+
+//Testing roles
+Route::screen('blogs', BlogListScreen::class)->name('platform.systems.blogs');
+Route::screen('blogs/{blog}/edit', BlogEditScreen::class)->name('platform.systems.edit.roles');
+//Testing roles
