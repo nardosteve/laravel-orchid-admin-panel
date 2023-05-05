@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Screens\Blog;
 
+use Orchid\Screen\Actions\Menu;
 use Orchid\Screen\Screen;
 
 class BlogListScreen extends Screen
@@ -33,7 +34,9 @@ class BlogListScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Menu::make('Test')->url('www.google.com'),
+        ];
     }
 
     /**

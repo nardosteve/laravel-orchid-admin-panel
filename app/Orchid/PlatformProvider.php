@@ -59,7 +59,7 @@ class PlatformProvider extends OrchidServiceProvider
              //Access rights
 
             //Content Creation
-            Menu::make('Blogs')->icon('book-open')->route('platform.example.charts')->title('Content')->divider(),
+            Menu::make('Blogs')->icon('book-open')->route('platform.systems.blogs')->title('Content')->divider(),
             //Content Creatioon
 
             // Menu::make(__('Blogs'))
