@@ -34,31 +34,37 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title('Navigation')
                 ->badge(fn () => 6),
 
-            Menu::make(__('Users'))
+            //Access rights
+            Menu::make('Users')
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
                 ->title(__('Access rights')),
 
-            Menu::make(__('Roles'))
+            Menu::make('Roles')
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
 
-            Menu::make(__('Permissions'))
+            Menu::make('Permissions')
                 ->icon('options')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
+             //Access rights
 
-            Menu::make(__('Blogs'))
-                ->icon('book-open')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles'),
+            //Content Creation
+            Menu::make('Blogs')->icon('book-open')->route('platform.example.charts')->title('Content')->divider(),
+            //Content Creatioon
 
-            Menu::make('Blogs')
-                ->title('Manage Blogs')
-                ->icon('book-open')
-                ->route('platform.example.layouts'),
+            // Menu::make(__('Blogs'))
+            //     ->icon('book-open')
+            //     ->route('platform.systems.roles')
+            //     ->permission('platform.systems.roles'),
+
+            // Menu::make('Blogs')
+            //     ->title('Manage Blogs')
+            //     ->icon('book-open')
+            //     ->route('platform.example.layouts'),
 
             Menu::make('Dropdown menu')
                 ->icon('code')
