@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Screens\Blog;
 
+use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Actions\Menu;
 use Orchid\Screen\Screen;
 
@@ -35,7 +36,8 @@ class BlogListScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Menu::make('Test')->url('www.google.com'),
+            // Menu::make('Test')->url('www.google.com'),
+            Link::make('Add')->icon('plus')->route('platform.systems.blogs.create'),
         ];
     }
 

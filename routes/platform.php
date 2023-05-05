@@ -102,5 +102,6 @@ Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('pla
 
 //Testing roles
 Route::screen('blogs', BlogListScreen::class)->name('platform.systems.blogs');
-Route::screen('blogs/{blog}/edit', BlogEditScreen::class)->name('platform.systems.edit.roles');
+Route::screen('blogs/create', BlogEditScreen::class)->name('platform.systems.blogs.create');
+Route::screen('blogs/{blog?}/edit', BlogEditScreen::class)->name('platform.systems.blogs.edit');
 //Testing roles
