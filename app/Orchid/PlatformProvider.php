@@ -45,10 +45,20 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
 
-            Menu::make(__('Blogs'))
-                ->icon('lock')
+            Menu::make(__('Permissions'))
+                ->icon('options')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
+
+            Menu::make(__('Blogs'))
+                ->icon('book-open')
+                ->route('platform.systems.roles')
+                ->permission('platform.systems.roles'),
+
+            Menu::make('Blogs')
+                ->title('Manage Blogs')
+                ->icon('book-open')
+                ->route('platform.example.layouts'),
 
             Menu::make('Dropdown menu')
                 ->icon('code')
@@ -57,32 +67,32 @@ class PlatformProvider extends OrchidServiceProvider
                     Menu::make('Sub element item 2')->icon('heart'),
                 ]),
 
-            // Menu::make('Basic Elements')
-            //     ->title('Form controls')
-            //     ->icon('note')
-            //     ->route('platform.example.fields'),
+            Menu::make('Basic Elements')
+                ->title('Form controls')
+                ->icon('note')
+                ->route('platform.example.fields'),
 
-            // Menu::make('Advanced Elements')
-            //     ->icon('briefcase')
-            //     ->route('platform.example.advanced'),
+            Menu::make('Advanced Elements')
+                ->icon('briefcase')
+                ->route('platform.example.advanced'),
 
-            // Menu::make('Text Editors')
-            //     ->icon('list')
-            //     ->route('platform.example.editors'),
+            Menu::make('Text Editors')
+                ->icon('list')
+                ->route('platform.example.editors'),
 
-            // Menu::make('Overview layouts')
-            //     ->title('Layouts')
-            //     ->icon('layers')
-            //     ->route('platform.example.layouts'),
+            Menu::make('Overview layouts')
+                ->title('Layouts')
+                ->icon('layers')
+                ->route('platform.example.layouts'),
 
-            // Menu::make('Chart tools')
-            //     ->icon('bar-chart')
-            //     ->route('platform.example.charts'),
+            Menu::make('Chart tools')
+                ->icon('bar-chart')
+                ->route('platform.example.charts'),
 
-            // Menu::make('Cards')
-            //     ->icon('grid')
-            //     ->route('platform.example.cards')
-            //     ->divider(),
+            Menu::make('Cards')
+                ->icon('grid')
+                ->route('platform.example.cards')
+                ->divider(),
         ];
     }
 
