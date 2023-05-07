@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Blogs;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Blog extends JsonResource
@@ -16,4 +17,6 @@ class Blog extends JsonResource
     {
         return parent::toArray($request);
     }
+
+    public static $model = Blogs::class;
 }

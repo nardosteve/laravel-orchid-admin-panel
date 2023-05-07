@@ -63,4 +63,9 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+    //Defining the relationship
+    public function blogs(){
+        return $this->hasMany(Blogs::class);
+    }
 }
