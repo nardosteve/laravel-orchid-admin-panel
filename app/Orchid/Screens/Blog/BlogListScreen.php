@@ -25,7 +25,7 @@ class BlogListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'BlogListScreen';
+        return 'Blogs';
     }
 
     /**

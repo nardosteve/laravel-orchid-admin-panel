@@ -2,8 +2,13 @@
 
 namespace App\Orchid\Layouts\Blog;
 
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\DropDown;
+use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
+use Orchid\Screen\Fields\Input;
+
 
 class BlogEditLayout extends Table
 {
@@ -24,6 +29,35 @@ class BlogEditLayout extends Table
      */
     protected function columns(): iterable
     {
-        return [];
+        return [
+            Input::make('blog.title')
+            ->type('text')
+            ->max(255)
+            ->required()
+            ->title(__('title'))
+            ->placeholder(__('Title'))
+            ->help(__('Title')),
+
+        DropDown::make()
+            ->icon('options-vertical')
+            ->list([
+                Link::make(__('Edit'))
+                    ->route('platform.users.edit')
+                    ->icon('pencil'),
+                Button::make(__('Delete'))
+                    ->method('remove')
+                    ->icon('trash')
+                    ->confirm(__('Are you sure you want to delete the user?'))
+                    ->parameters(),
+            ]),
+
+        Input::make('role.slug')
+            ->type('text')
+            ->max(255)
+            ->required()
+            ->title(__('Slug'))
+            ->placeholder(__('Slug'))
+            ->help(__('Actual name in the system')),
+        ];
     }
 }
